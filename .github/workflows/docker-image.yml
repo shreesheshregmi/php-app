@@ -22,3 +22,9 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Tag the Docker image
+      run: docker tag my-image-name:$(date +%s) $DOCKERHUB_USERNAME/my-image-name:$(date +%s)
+      
+    - name: Push the Docker image
+      run: docker push my-image-name:$(date +%s)
