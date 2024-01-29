@@ -29,7 +29,7 @@ jobs:
           
 
     - name: Tag the Docker image
-      run: docker tag my-image-name:${{ IMAGE_TAG::7 }} $DOCKERHUB_USERNAME/my-image-name:${{IMAGE_TAG::7}}
+      run: docker tag my-image-name:${{ IMAGE_TAG::7 }} ${{ secrets.DOCKERHUB_USERNAME }}/my-image-name:${{IMAGE_TAG::7}}
 
     - name: Push the Docker image
       run: docker push my-image-name:${{IMAGE_TAG::7}}
