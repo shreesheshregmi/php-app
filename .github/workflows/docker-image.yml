@@ -23,7 +23,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:${{ IMAGE_TAG::7}} 
+      run: docker build . --file Dockerfile --tag my-image-name
 
     
           
