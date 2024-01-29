@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      IMAGE_TAG: ${{ github.sha }}
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:${IMAGE_TAG::7}
 
@@ -22,6 +24,7 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
 
     - name: Tag the Docker image
       run: docker tag my-image-name:${IMAGE_TAG::7} $DOCKERHUB_USERNAME/my-image-name:${IMAGE_TAG::7}
