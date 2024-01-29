@@ -30,4 +30,4 @@ jobs:
       run: docker tag my-image-name:${{ github.sha }} $DOCKERHUB_USERNAME/my-image-name:${{IMAGE_TAG::7}}
 
     - name: Push the Docker image
-      run: docker push my-image-name:${IMAGE_TAG::7}
+      run: docker push my-image-name:${{IMAGE_TAG::7}}
