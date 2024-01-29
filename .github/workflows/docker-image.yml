@@ -32,4 +32,4 @@ jobs:
       run: docker tag my-image-name ${{ secrets.DOCKERHUB_USERNAME }}/my-image-name:${{IMAGE_TAG::7}}
 
     - name: Push the Docker image
-      run: docker push my-image-name:${{IMAGE_TAG::7}}
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-image-name:${{IMAGE_TAG::7}}
