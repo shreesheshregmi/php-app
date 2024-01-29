@@ -20,13 +20,12 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          IMAGE_TAG: ${{ github.sha }}
+          
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag php-app
 
-    
-          
+             
 
     - name: Tag the Docker image
       run: docker tag php-app ${{ secrets.DOCKERHUB_USERNAME }}/php-app:$(date +%s)
