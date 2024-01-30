@@ -5,7 +5,7 @@
 <h1>My first PHP page</h1>
 
 <?php
-echo "bird man,hola, hola, bird man, bird man, HELLO, Hello";
+echo "bird man,hola, hi there, bird man, bird man, HELLO, Hello";
 echo "hola, hola, Hello World! hello hello hello hello hello. hello sunshine, paradise";
 $color = "black";
 echo "My car is " . $color . "<br>";
